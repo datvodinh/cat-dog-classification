@@ -2,11 +2,13 @@ import numpy as np
 import torch
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler,OneHotEncoder
-
+from imblearn.over_sampling import RandomOverSampler
 def SplitData(df):
     numpy_df = np.array(df)
     X = numpy_df[:,:-1]
     y = numpy_df[:,-1]
+    ros = RandomOverSampler()
+    X,y = ros.fit_resample(X,y)
     X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=0)
 
     scaler  = MinMaxScaler()
