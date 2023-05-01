@@ -22,6 +22,8 @@ graphviz==0.19.1
 gym==0.23.1
 gym-notices==0.0.6
 idna==3.3
+imbalanced-learn==0.10.1
+imblearn==0.0
 importlib-metadata==4.11.3
 ipykernel @ file:///C:/ci/ipykernel_1633545585502/work/dist/ipykernel-6.4.1-py3-none-any.whl
 ipython @ file:///C:/ci/ipython_1635944283918/work
@@ -29,7 +31,7 @@ ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/wor
 ipywidgets==7.6.5
 jedi @ file:///C:/ci/jedi_1611341083684/work
 Jinja2==3.0.3
-joblib==1.1.0
+joblib==1.2.0
 jsonschema==4.3.3
 jupyter==1.0.0
 jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1640335223713/work

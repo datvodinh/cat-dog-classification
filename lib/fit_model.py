@@ -10,6 +10,8 @@ def DataLoader(X_train,y_train,batch_size=64):
         yield X_new[begin:end],y_new[begin:end]
 
 def FitModel(X_train,X_test,y_train,y_test,model,criterion,optimizer,epoch,batch_size):
+    train_acc_list = []
+    val_acc_list   = []
     for e in range(epoch):
         total_loss = 0
         for x,y in DataLoader(X_train,y_train,batch_size):
@@ -28,3 +30,8 @@ def FitModel(X_train,X_test,y_train,y_test,model,criterion,optimizer,epoch,batch
                 train_acc = torch.mean((torch.argmax(y_train_pred,dim=1)==torch.argmax(y_train,dim=1)) * 1.0)
                 val_acc   = torch.mean((torch.argmax(y_test_pred,dim=1)==torch.argmax(y_test,dim=1)) * 1.0)
                 print(f'EPOCH {e:>5} | LOSS: {total_loss:.4f} | TRAIN ACC: {train_acc* 100:.2f}% | VAL ACC: {val_acc*100:.2f}% |')
+    
+    Plot(train_acc_list,val_acc_list)
+
+def Plot(train_acc_list,train_val_list):
+    pass
