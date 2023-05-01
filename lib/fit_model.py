@@ -1,0 +1,28 @@
+import torch
+
+def DataLoader(X_train,y_train,batch_size=64):
+    """Split data into batch"""
+    n = X_train.shape[0]
+    idx = torch.randperm(n)
+    X_new,y_new = X_train[idx],y_train[idx]
+    for i in range(0,n,batch_size):
+        begin,end = i, min(i+batch_size,n)
+        yield X_new[begin:end],y_new[begin:end]
+
+def FitModel(X_train,X_test,y_train,y_test,model,criterion,optimizer,epoch,batch_size):
+    for e in range(epoch):
+        for x,y in DataLoader(X_train,y_train,batch_size):
+            y_pred = model.forward(x)
+            loss = criterion(y_pred,y)
+
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            # print(loss.detach().item())
+        if e%1==0:
+            with torch.no_grad():
+                y_train_pred = model.forward(X_train)
+                y_test_pred  = model.forward(X_test)
+                train_acc = torch.mean((torch.argmax(y_train_pred,dim=1)==torch.argmax(y_train,dim=1)) * 1.0)
+                val_acc   = torch.mean((torch.argmax(y_test_pred,dim=1)==torch.argmax(y_test,dim=1)) * 1.0)
+                print(f'EPOCH {e:>5} | TRAIN ACC: {train_acc* 100:.2f}% | VAL ACC: {val_acc*100:.2f}% |')
