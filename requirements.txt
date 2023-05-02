@@ -1,7 +1,6 @@
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 attrs==21.4.0
-azureml==0.2.7
 backcall
 bleach==4.1.0
 certifi

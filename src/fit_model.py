@@ -23,13 +23,13 @@ def FitModel(X_train,X_test,y_train,y_test,model,criterion,optimizer,epoch,batch
             optimizer.step()
             total_loss+=loss.detach().item()
             # print(loss.detach().item())
-        if e%1==0:
-            with torch.no_grad():
-                y_train_pred = model.forward(X_train)
-                y_test_pred  = model.forward(X_test)
-                train_acc = torch.mean((torch.argmax(y_train_pred,dim=1)==torch.argmax(y_train,dim=1)) * 1.0)
-                val_acc   = torch.mean((torch.argmax(y_test_pred,dim=1)==torch.argmax(y_test,dim=1)) * 1.0)
-                print(f'EPOCH {e:>5} | LOSS: {total_loss:.4f} | TRAIN ACC: {train_acc* 100:.2f}% | VAL ACC: {val_acc*100:.2f}% |')
+        total_loss /= int(X_train.shape[0] / batch_size)
+        with torch.no_grad():
+            y_train_pred = model.forward(X_train)
+            y_test_pred  = model.forward(X_test)
+            train_acc = torch.mean((torch.argmax(y_train_pred,dim=1)==torch.argmax(y_train,dim=1)) * 1.0)
+            val_acc   = torch.mean((torch.argmax(y_test_pred,dim=1)==torch.argmax(y_test,dim=1)) * 1.0)
+            print(f'EPOCH {e:>5} | LOSS: {total_loss:.4f} | TRAIN ACC: {train_acc* 100:.2f}% | VAL ACC: {val_acc*100:.2f}% |')
     
     Plot(train_acc_list,val_acc_list)
 
