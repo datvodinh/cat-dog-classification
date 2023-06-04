@@ -1,4 +1,5 @@
 # CAT DOG CLASSIFICATION
+<a href="https://colab.research.google.com/github/datvodinh10/Cat-Dog-Classification/blob/main/Cat_Dog.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 ## Introduction
 Classify between a Dog and Cat in each image
 <!-- ![image](https://github.com/datvodinh10/Cat-Dog-Classification/assets/90944231/ed6b85fc-706a-4275-bb52-a57810f46a7d) -->
