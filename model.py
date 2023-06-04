@@ -35,9 +35,9 @@ train_transform = transforms.Compose([
 ])
 
 def predict(image):
-    with torch.no_grad():
-        model = init_model()
-        data = train_transform(image)
-        data = data.reshape(1,3,112,112)
-        return model(data).numpy()
+    model.eval()
+    model = init_model()
+    data = train_transform(image)
+    data = data.reshape(1,3,112,112)
+    return model(data).numpy()
 
