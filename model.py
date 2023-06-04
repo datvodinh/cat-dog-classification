@@ -39,5 +39,5 @@ def predict(image):
     model = init_model()
     data = train_transform(image)
     data = data.reshape(1,3,112,112)
-    return model(data).numpy()
+    return model(data).detach().numpy()
 
