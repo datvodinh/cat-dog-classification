@@ -35,8 +35,8 @@ train_transform = transforms.Compose([
 ])
 
 def predict(image):
-    model.eval()
     model = init_model()
+    model.eval()
     data = train_transform(image)
     data = data.reshape(1,3,112,112)
     return model(data).detach().numpy()
