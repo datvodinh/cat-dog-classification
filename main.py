@@ -21,9 +21,9 @@ try:
             ```
         """)
         if prob[0] > prob[1]:
-            st.header("-> This is a Cat")
+            st.header(">>> This is a Cat")
         else:
-            st.header("-> This is a Dog")
+            st.header(">>> This is a Dog")
 except:
     st.text('Error: Picture must be RGB (3 channels), not RBGA (4 channels)!')    
 
