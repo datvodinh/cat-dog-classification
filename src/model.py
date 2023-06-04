@@ -25,14 +25,14 @@ def init_model():
                 # nn.BatchNorm1d(128),
                 nn.Dropout(p=0.4),
                 nn.Linear(128,2))
-    cnn_model.load_state_dict(torch.load("data\model.pt"))
+    cnn_model.load_state_dict(torch.load("https://github.com/datvodinh10/cat-dog-classification/blob/07486ff7fad9d56b64ededfa6b25d408266c6c3b/data/model.pt"))
     return cnn_model
 
 train_transform = transforms.Compose([ 
     transforms.Resize((112,112)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-])
+])https://github.com/datvodinh10/cat-dog-classification/blob/07486ff7fad9d56b64ededfa6b25d408266c6c3b/data/model.pt
 
 def predict(image):
     with torch.no_grad():
