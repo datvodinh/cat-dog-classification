@@ -25,7 +25,7 @@ def init_model():
                 # nn.BatchNorm1d(128),
                 nn.Dropout(p=0.4),
                 nn.Linear(128,2))
-    cnn_model.load_state_dict(torch.load("data/model.pt"))
+    cnn_model.load_state_dict(torch.load("data\model.pt"))
     return cnn_model
 
 train_transform = transforms.Compose([ 
