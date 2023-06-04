@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-from model import *
+from src.model import *
 
 st.title('Cat Dog Classification')
 image = st.file_uploader('Upload Picture', type=["png", "jpg", "jpeg"])
