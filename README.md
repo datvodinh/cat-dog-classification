@@ -3,7 +3,7 @@
 ## Introduction
 Classify between a Dog and Cat in each image
 <!-- ![image](https://github.com/datvodinh10/Cat-Dog-Classification/assets/90944231/ed6b85fc-706a-4275-bb52-a57810f46a7d) -->
-<img src="https://github.com/datvodinh10/Cat-Dog-Classification/assets/90944231/ed6b85fc-706a-4275-bb52-a57810f46a7d" width="600" height="600">
+![](img/test.png)
 
 ## Contributor
 ```
