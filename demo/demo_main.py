@@ -16,6 +16,7 @@ option = st.selectbox(
 st.write('Model selected:', option)
 
 st.write('***')
+
 image = st.file_uploader('Upload Picture', type=["png", "jpg", "jpeg"])
 # try:
 if image is not None:
@@ -25,7 +26,7 @@ if image is not None:
 
     for percent_complete in range(100):
         my_bar.progress(percent_complete + 1)
-        
+
     prob = predict(Image.open(image),option)[0]
     prob = np.exp(prob) / np.sum(np.exp(prob))
     st.markdown(f"""

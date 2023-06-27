@@ -13,7 +13,7 @@ def init_model(model_type:str):
                     nn.Linear(128, 2))
         
         resnet.load_state_dict(torch.load(os.path.join(os.getcwd(),"demo/resnet.pt"),map_location=torch.device('cpu')))
-        resnet.eval()
+
         return resnet
     else:
         cnn_model = nn.Sequential(
@@ -40,7 +40,7 @@ def init_model(model_type:str):
             nn.Linear(128,2))
         
         cnn_model.load_state_dict(torch.load(os.path.join(os.getcwd(),"demo/model.pt"),map_location=torch.device('cpu')))
-        cnn_model.eval()
+
         return cnn_model
 
 
