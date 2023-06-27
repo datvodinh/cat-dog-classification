@@ -8,6 +8,14 @@ import time
 st.title('Cat Dog Classification')
 st.text('Author: Võ Đình Đạt')
 st.write('***')
+
+option = st.selectbox(
+    'Choose Model?',
+    ('resnet18', 'cnn'))
+
+st.write('Model selected:', option)
+
+st.write('***')
 image = st.file_uploader('Upload Picture', type=["png", "jpg", "jpeg"])
 # try:
 if image is not None:
@@ -18,7 +26,7 @@ if image is not None:
     for percent_complete in range(100):
         time.sleep(0.001)
         my_bar.progress(percent_complete + 1)
-    prob = predict(Image.open(image))[0]
+    prob = predict(Image.open(image),option)[0]
     prob = np.exp(prob) / np.sum(np.exp(prob))
     st.markdown(f"""
         ```
