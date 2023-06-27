@@ -10,7 +10,7 @@ st.text('Author: Võ Đình Đạt')
 
 
 st.write('***')
-
+st.header("Upload Image: ")
 old_option = None
 image = st.file_uploader('Upload Picture', type=["png", "jpg", "jpeg"])
 
