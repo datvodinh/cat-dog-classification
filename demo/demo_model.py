@@ -15,7 +15,7 @@ def init_model(model_type:str):
         resnet.load_state_dict(torch.load(os.path.join(os.getcwd(),"demo/resnet.pt"),map_location=torch.device('cpu')))
 
         return resnet
-    else:
+    elif model_type=="cnn":
         cnn_model = nn.Sequential(
             nn.Conv2d(in_channels=3,out_channels=32,kernel_size=(3,3)),
             nn.ReLU(),
