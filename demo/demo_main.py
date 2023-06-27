@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-from demo.demo_model import *
+from demo_model import *
 import time
 
 st.title('Cat Dog Classification')
