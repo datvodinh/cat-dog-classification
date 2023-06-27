@@ -15,6 +15,29 @@ Classify between a Dog and Cat in each image
 
 ```
 
+## Repo
+```
+|   .gitignore
+│   kaggle.json
+│   LICENSE
+│   README.md
+│   requirements.txt
+│
+├───demo
+│       demo_main.py
+│       demo_model.py
+│       model.pt
+│       resnet.pt
+│
+├───img
+│       test.png
+│
+└───src
+        Augmentation_Experiment.ipynb
+        Cat_Dog.ipynb
+        EDA.ipynb
+```
+
 ## Dataset
 ```
 https://www.kaggle.com/competitions/dog-vs-cat-classification
