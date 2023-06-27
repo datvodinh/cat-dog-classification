@@ -29,6 +29,8 @@ https://www.kaggle.com/competitions/dog-vs-cat-classification
 
 - Step 3: Run notebook (prefer GPU runtime and High RAM for faster training).
 
+---
+
 ## `Local Machine`
 - Install requirement:
 ```
