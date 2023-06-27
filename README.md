@@ -21,8 +21,25 @@ https://www.kaggle.com/competitions/dog-vs-cat-classification
 ```
 
 ## How to run
+### `Google Colab`
+- Step 1: Open notebook, press Run in Colab:
+<a href="https://colab.research.google.com/github/datvodinh10/Cat-Dog-Classification/blob/main/Cat_Dog.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+- Step 2: Save a copy in order to run.
+
+- Step 3: Run notebook (prefer GPU runtime and High RAM for faster training).
+
+## `Local Machine`
+- Install requirement:
 ```
-Step 1: Open notebook, press Run in Colab.
-Step 2: Save a copy in order to run.
-Step 3: Run notebook (prefer GPU runtime and High RAM for faster training).
+pip install requirements.txt
 ```
+
+- Open `src/Cat_Dog.ipynb`
+
+- Press `Run all`
+
+NOTE: Require GPU or at least 32Gb RAM and CPU to run local.
+
+
+
