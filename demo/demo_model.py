@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
 from torchvision import transforms,models
-import streamlit as st
+import os
+
 def init_model():
     resnet = models.resnet18()
 
@@ -10,7 +11,7 @@ def init_model():
                 nn.ReLU(inplace=True),
                 nn.Linear(128, 2))
 
-    resnet.load_state_dict(torch.load("./resnet.pt",map_location=torch.device('cpu')))
+    resnet.load_state_dict(torch.load(os.path.join(os.getcwd(),"demo/resnet.pt"),map_location=torch.device('cpu')))
     return resnet
 
 train_transform = transforms.Compose([ 
