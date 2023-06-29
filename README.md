@@ -56,9 +56,16 @@ https://www.kaggle.com/competitions/dog-vs-cat-classification
 
 ## `Local Machine`
 - Install requirement:
+
+```
+git clone https://github.com/datvodinh10/cat-dog-classification.git
+```
 ```
 pip install requirements.txt
 ```
+
+
+
 
 - Open `src/Cat_Dog.ipynb`
 
